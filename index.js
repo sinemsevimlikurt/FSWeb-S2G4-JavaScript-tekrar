@@ -105,7 +105,8 @@ let ucetambolunenler,
 let enbuyuk = 0;
 let enkucuk = 0;
 for (let i = 0; i < sayilar.length; i++) {
-if (enkucuk > sayilar[i]) {
+
+  if (enkucuk > sayilar[i]) {
   enbuyuk = sayilar[i]
 }
 if (enkucuk < sayilar[i]) {
@@ -116,6 +117,7 @@ if (enkucuk < sayilar[i]) {
 // 3b çözümü:
 
 let ucetambolunenler = [];
+
 sayilar.forEach(sayi => {
   if (sayi % 3 === 0) {
     ucetambolunenler.push(sayi)
@@ -143,6 +145,7 @@ let sayiSayisi = {};
 sayilar.forEach(sayi => {
   sayiSayisi[sayi] = (sayiSayisi[sayi] || 0) + 1;
 });
+
 
 for (let sayi in sayiSayisi) {
   if (sayiSayisi[sayi] > 1) {

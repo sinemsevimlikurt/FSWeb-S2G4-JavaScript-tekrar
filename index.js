@@ -50,9 +50,11 @@ function KareninAlani(kenaruzunlugu) {
 	4. Hesaplanan çemberin çevresi döndürülecektir.
 */
 
-function CemberinCevresi(/* kodlar buraya */) {
-  /* kodlar buraya */
+function CemberinCevresi(yariCap) {
+  const pi = 3.14159;
+  return 2 * pi * yariCap;
 }
+console.log(CemberinCevresi(5));
 
 /* (Oto test yok) Yukarıdaki CemberinCevresi fonksiyonunu yarıçap = 5 vererek aşağıda çalıştırıp, sonucu konsolda gözlemleyin (console.log)  */
 
@@ -64,9 +66,11 @@ function CemberinCevresi(/* kodlar buraya */) {
 	4. Hesaplanan çemberin alanı döndürülecektir.
 */
 
-function CemberinAlani(/* kodlar buraya */) {
-  /* kodlar buraya */
+function CemberinAlani(yariCap, pi) {
+  return Math.pow(yariCap, 2);
+ 
 }
+console.log(15, pi);
 
 /* (Oto test yok) Yukarıdaki CemberinAlani fonksiyonunu yarıçap = 15 vererek aşağıda çalıştırıp, sonucu konsolda gözlemleyin (console.log)  */
 
@@ -98,28 +102,53 @@ let ucetambolunenler,
   tekraredensayilar;
 
 // 3a çözümü
-
-/* kodlar buraya */
+let enbuyuk = 0;
+let enkucuk = 0;
+for (let i = 0; i < sayilar.length; i++) {
+if (enkucuk > sayilar[i]) {
+  enbuyuk = sayilar[i]
+}
+if (enkucuk < sayilar[i]) {
+  enkucuk = sayilar[i]
+}
+}
 
 // 3b çözümü:
 
-/* kodlar buraya */
+let ucetambolunenler = [];
+sayilar.forEach(sayi => {
+  if (sayi % 3 === 0) {
+    ucetambolunenler.push(sayi)
+  }
+});
 
 // 3c çözümü:
 
-/* kodlar buraya */
+let ucetambolunenlertoplam = ucetambolunenler.reduce((toplam, item) => toplam + item, 0)
 
 // 3d çözümü
 
-/* kodlar buraya */
+const besyuzdenkucuksayilar = [sayilar.filter(sayi => sayi < 500)]
 
 // 3e çözümü
 
-/* kodlar buraya */
+let siralisayilar = [besyuzdenkucuksayilar.sort((a, b) => a - b)]
 
 // 3f çözümü
 
-/* kodlar buraya */
+let tekraredensayilar = [];
+
+let sayiSayisi = {};
+
+sayilar.forEach(sayi => {
+  sayiSayisi[sayi] = (sayiSayisi[sayi] || 0) + 1;
+});
+
+for (let sayi in sayiSayisi) {
+  if (sayiSayisi[sayi] > 1) {
+    tekraredensayilar.push(`${sayi} sayısı ${sayiSayisi[sayi]} kere tekrar edilmiştir`);
+  }
+}
 
 /*  Bu satırın aşağısındaki kodları lütfen değiştirmeyin  */
 
